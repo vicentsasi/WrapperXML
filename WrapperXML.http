@@ -1,0 +1,6 @@
+@WrapperXML_HostAddress = http://localhost:5024
+
+GET {{WrapperXML_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
