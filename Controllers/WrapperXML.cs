@@ -8,19 +8,19 @@ namespace WrapperXML.Controllers
     public class WrapperXML : ControllerBase
     {
         [HttpGet("XmlToJson")]
-        public async Task<IActionResult> ExtractCV()
+        public async Task<IActionResult> WrapperCAT()
         {
             try
             {
-                string csvFileName = "CAT.xml";
-                string csvFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Fuentes de datos", csvFileName);
-                string jsonFromCsv = XmlWrapper.ConvertXmlToJson(csvFilePath);
+                string xmlFileName = "CAT.xml";
+                string xmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Fuentes de datos", xmlFileName);
+                string jsonFromXml = XmlWrapper.ConvertXmlToJson(xmlFilePath);
 
-                return Ok(jsonFromCsv);
+                return Ok(jsonFromXml);
             }
             catch (Exception ex)
             {
-                return BadRequest($"Error en la extracción para CVextractor: {ex.Message}");
+                return BadRequest($"Error en el wrapper para WrapperXml: {ex.Message}");
             }
         }
     }
